@@ -1,6 +1,6 @@
 # abelsr's Dotfiles
 
-This repository contains my personal configuration files (dotfiles), mainly focused on **Neovim**.
+This repository contains my personal configuration files (dotfiles), mainly focused on **Neovim** and **Fastfetch**.
 
 ## 🚀 Installation
 
@@ -18,6 +18,10 @@ The repository includes an automated installation script to facilitate the proce
    ```bash
    ./install.sh
    ```
+
+   This script will install:
+   *   **Neovim** and its plugins.
+   *   **Fastfetch** and its configuration.
 
 ## 🛠️ Neovim Configuration
 
@@ -56,10 +60,16 @@ Some of the most useful custom shortcuts defined in `nvim/Keybindings/keybinding
 * **Theme**: Dracula
 * **Icons**: Requires a [Nerd Font](https://www.nerdfonts.com/) installed in your terminal to correctly visualize icons.
 
+## 🖥️ Fastfetch Configuration
+
+Includes a custom configuration for **Fastfetch** located in `fastfetch/config.jsonc`, providing a clean and informative system summary.
+
 ## 📂 Project Structure
 
 ```text
 dotfiles/
+├── fastfetch/          # Fastfetch configuration
+│   └── config.jsonc
 ├── install.sh          # Installation script
 ├── nvim/
 │   ├── init.vim        # Main configuration
