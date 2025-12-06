@@ -119,6 +119,28 @@ nvim --headless +"source ~/.config/nvim/Plugins/plugins.vim" +"PlugInstall --syn
     echo -e "${YELLOW}${ARROW} Retrying plugin installation...${NC}"
     nvim --headless +"PlugInstall --sync" +qall
 }
+
+# Install fastfetch
+echo -e "${YELLOW}${ARROW} Installing fastfetch...${NC}"
+if ! command -v fastfetch &> /dev/null
+then
+    if [ -f /etc/debian_version ]; then
+        sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
+        sudo apt update
+        sudo apt install -y fastfetch
+    elif [ -f /etc/redhat-release ]; then
+        sudo dnf install -y fastfetch
+    fi
+    echo -e "${GREEN}${CHECK} fastfetch installed successfully${NC}"
+else
+    echo -e "${GREEN}${CHECK} fastfetch is already installed${NC}"
+fi
+
+# Copy fastfetch config
+mkdir -p ~/.config/fastfetch
+cp -r fastfetch/* ~/.config/fastfetch/
+echo -e "${GREEN}${CHECK} fastfetch configuration files copied to ~/.config/fastfetch${NC}"
+
 echo ""
 echo -e "${GREEN}${CHECK} All plugins installed successfully${NC}"
 echo ""
