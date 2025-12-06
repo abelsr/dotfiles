@@ -54,4 +54,8 @@ if has('win32') || has('win64')
     source ~/Appdata/Local/nvim/Plugins/plugins.vim
     source ~/Appdata/Local/nvim/Themes/themes.vim
     source ~/Appdata/Local/nvim/Keybindings/keybindings.vim
+else
+    source ~/.config/nvim/Plugins/plugins.vim
+    source ~/.config/nvim/Themes/themes.vim
+    source ~/.config/nvim/Keybindings/keybindings.vim
 endif
