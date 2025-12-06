@@ -20,8 +20,8 @@ The repository includes an automated installation script to facilitate the proce
    ```
 
    This script will install:
-   *   **Neovim** and its plugins.
-   *   **Fastfetch** and its configuration.
+   * **Neovim** and its plugins.
+   * **Fastfetch** and its configuration.
 
 ## 🛠️ Neovim Configuration
 
@@ -82,4 +82,3 @@ dotfiles/
 ## 📝 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
