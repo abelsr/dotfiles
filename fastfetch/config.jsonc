@@ -1,133 +1,111 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
+    "type": "kitty-direct",
+    "source": "/home/abel-sr/.config/fastfetch/ubuntu.png",
+    "width": 30,
+    "height": 13,
     "padding": {
-      "top": 2,
-      "left": 1,
-      "right": 2
-    }
+      "top": 3,
+      "left": 2,
+      "right": 4,
+    },
   },
   "display": {
-    "separator": "  "
+    "separator": " ",
+    "color": {
+      "keys": "blue",
+    },
   },
   "modules": [
-    // Title
     {
+      "key": "╭───────────╮",
+      "type": "custom",
+    },
+    {
+      "key": "│ {#34} User    │",
       "type": "title",
-      "format": "{#1}╭───────────── {#}{user-name-colored}"
+      "format": "{user-name}@{host-name}",
     },
-    // System Information
     {
+      "key": "├───────────┤",
       "type": "custom",
-      "format": "{#1}│ {#}System Information"
     },
     {
+      "key": "│ {#34} Distro  │",
       "type": "os",
-      "key": "{#separator}│  {#keys}󰍹 OS"
     },
     {
+      "key": "│ {#35}󰅐 Kernel  │",
       "type": "kernel",
-      "key": "{#separator}│  {#keys}󰒋 Kernel"
     },
     {
-      "type": "uptime",
-      "key": "{#separator}│  {#keys}󰅐 Uptime"
+      "key": "│ {#31} Term    │",
+      "type": "terminal",
     },
     {
-      "type": "packages",
-      "key": "{#separator}│  {#keys}󰏖 Packages",
-      "format": "{all}"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Desktop Environment
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Desktop Environment"
-    },
-    {
-      "type": "de",
-      "key": "{#separator}│  {#keys}󰧨 DE"
-    },
-    {
-      "type": "wm",
-      "key": "{#separator}│  {#keys}󱂬 WM"
-    },
-    {
-      "type": "wmtheme",
-      "key": "{#separator}│  {#keys}󰉼 Theme"
-    },
-    {
-      "type": "display",
-      "key": "{#separator}│  {#keys}󰹑 Resolution"
-    },
-    {
+      "key": "│ {#32} Shell   │",
       "type": "shell",
-      "key": "{#separator}│  {#keys}󰞷 Shell"
     },
     {
-      "type": "terminalfont",
-      "key": "{#separator}│  {#keys}󰛖 Font"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Hardware Information
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Hardware Information"
-    },
-    {
-      "type": "cpu",
-      "key": "{#separator}│  {#keys}󰻠 CPU"
-    },
-    {
-      "type": "gpu",
-      "key": "{#separator}│  {#keys}󰢮 GPU"
-    },
-    {
-      "type": "memory",
-      "key": "{#separator}│  {#keys}󰍛 Memory"
-    },
-    {
-      "type": "disk",
-      "key": "{#separator}│  {#keys}󰋊 Disk (/)",
-      "folders": "/"
-    },
-
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Network Information"
-    },
-    {
-      "type": "wifi",
-      "key": "{#separator}│  {#keys}󰍛 Wi-Fi"
-    },
-    {
+      "key": "│ {#91}󰆤 IP      │",
       "type": "localip",
-      "key": "{#separator}│  {#keys}󰍛 Local IP"
+      "defaultRouteOnly": true,
+      "showPrefixLen": false,
+      "showMac": false,
+      "showIpv6": false,
     },
     {
+      "key": "├───────────┤",
       "type": "custom",
-      "format": "{#1}│"
     },
-    // Colors
     {
+      "key": "│ {#34} CPU     │",
+      "type": "cpu",
+    },
+    {
+      "key": "│ {#35}󰻠 GPU     │",
+      "type": "gpu",
+      "hideType": "integrated",
+      "driverSpecific": true,
+      "format": "{name}",
+    },
+    {
+      "key": "│ {#35}󰻠 VRAM    │",
+      "type": "gpu",
+      "hideType": "integrated",
+      "driverSpecific": true,
+      "format": "{dedicated-used} / {dedicated-total}",
+    },
+    {
+      "key": "│ {#36}󰻠 iGPU    │",
+      "type": "gpu",
+      "hideType": "discrete",
+      "format": "{name} [{type}]",
+    },
+    {
+      "key": "│ {#36} RAM     │",
+      "type": "memory",
+      "format": "{used} / {total} {percentage-bar}",
+    },
+    {
+      "key": "│ {#32}󰉉 Disk    │",
+      "type": "disk",
+      "folders": "/",
+      "format": "{size-used} / {size-total} {files-percentage-bar}",
+    },
+    {
+      "key": "├───────────┤",
+      "type": "custom",
+    },
+    {
+      "key": "│ {#39} Colors  │",
       "type": "colors",
-      "key": "{#separator}│",
-      "symbol": "circle"
+      "symbol": "circle",
     },
-    // Footer
     {
+      "key": "╰───────────╯",
       "type": "custom",
-      "format": "{#1}╰───────────────────────────────╯"
-    }
-  ]
+    },
+  ],
 }

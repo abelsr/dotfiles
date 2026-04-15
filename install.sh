@@ -141,6 +141,30 @@ mkdir -p ~/.config/fastfetch
 cp -r fastfetch/* ~/.config/fastfetch/
 echo -e "${GREEN}${CHECK} fastfetch configuration files copied to ~/.config/fastfetch${NC}"
 
+# Install kitty
+echo -e "${YELLOW}${ARROW} Installing kitty...${NC}"
+if ! command -v kitty &> /dev/null
+then
+    if [ -f /etc/debian_version ]; then
+        sudo apt update
+        sudo apt install -y kitty
+    elif [ -f /etc/redhat-release ]; then
+        sudo dnf install -y kitty
+    fi
+    echo -e "${GREEN}${CHECK} kitty installed successfully${NC}"
+else
+    echo -e "${GREEN}${CHECK} kitty is already installed${NC}"
+fi
+
+# Copy kitty config
+mkdir -p ~/.config/kitty
+cp -r kitty/* ~/.config/kitty/
+echo -e "${GREEN}${CHECK} kitty configuration files copied to ~/.config/kitty${NC}"
+
+# Copy setup-dev.sh
+cp setup-dev.sh ~/
+echo -e "${GREEN}${CHECK} setup-dev.sh copied to home directory${NC}"
+
 echo ""
 echo -e "${GREEN}${CHECK} All plugins installed successfully${NC}"
 echo ""
