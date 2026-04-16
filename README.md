@@ -1,27 +1,46 @@
 # abelsr's Dotfiles
 
-This repository contains my personal configuration files (dotfiles), mainly focused on **Neovim** and **Fastfetch**.
+This repository contains my personal configuration files (dotfiles) for **Neovim**, **Kitty**, **Fastfetch**, and a full dev environment setup script.
 
 ## 🚀 Installation
 
-The repository includes an automated installation script to facilitate the process.
+### Dotfiles (Neovim, Kitty, Fastfetch)
 
-1. Clone the repository:
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/abelsr/dotfiles/main/install.sh)
+```
 
-   ```bash
-   git clone https://github.com/abelsr/dotfiles.git
-   cd dotfiles
-   ```
+Or clone and run manually:
 
-2. Run the installation script:
+```bash
+git clone https://github.com/abelsr/dotfiles.git && cd dotfiles && ./install.sh
+```
 
-   ```bash
-   ./install.sh
-   ```
+This installs and configures:
+* **Neovim** and its plugins
+* **Kitty** terminal (Catppuccin Mocha theme)
+* **Fastfetch** and its configuration
 
-   This script will install:
-   * **Neovim** and its plugins.
-   * **Fastfetch** and its configuration.
+### Full dev environment
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/abelsr/dotfiles/main/setup-dev.sh)
+```
+
+Or with a dry run first:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/abelsr/dotfiles/main/setup-dev.sh) --dry-run
+```
+
+This sets up:
+* **Editors**: VS Code, Zed
+* **Terminals**: Alacritty, Kitty, Ghostty
+* **Docker** (CE + Compose)
+* **Shell**: Zsh + Oh My Zsh + Powerlevel10k + plugins
+* **CLI tools**: bat, ripgrep, fd, jq, fzf, btop, tmux, lsd, lazygit, lazydocker, starship, uv
+* **Apps**: Obsidian
+* **Nerd Fonts**: JetBrainsMono, FiraCode, Hack, SourceCodePro, UbuntuMono
 
 ## 🛠️ Neovim Configuration
 
@@ -60,9 +79,17 @@ Some of the most useful custom shortcuts defined in `nvim/Keybindings/keybinding
 * **Theme**: Dracula
 * **Icons**: Requires a [Nerd Font](https://www.nerdfonts.com/) installed in your terminal to correctly visualize icons.
 
+## 🐱 Kitty Configuration
+
+Catppuccin Mocha themed terminal with:
+* JetBrainsMono Nerd Font
+* Powerline tab bar (bottom)
+* Pane splits and vim-style navigation (`alt+h/j/k/l`)
+* Resize panes with `ctrl+alt+h/j/k/l`
+
 ## 🖥️ Fastfetch Configuration
 
-Includes a custom configuration for **Fastfetch** located in `fastfetch/config.jsonc`, providing a clean and informative system summary.
+Box-style system summary with Kitty image logo, showing user, distro, kernel, terminal, shell, IP, CPU, GPU, VRAM, iGPU, RAM, disk, and colors.
 
 ## 📂 Project Structure
 
@@ -70,12 +97,15 @@ Includes a custom configuration for **Fastfetch** located in `fastfetch/config.j
 dotfiles/
 ├── fastfetch/          # Fastfetch configuration
 │   └── config.jsonc
-├── install.sh          # Installation script
+├── install.sh          # Dotfiles installation script
+├── kitty/              # Kitty terminal configuration
+│   └── kitty.conf
 ├── nvim/
 │   ├── init.vim        # Main configuration
 │   ├── Keybindings/    # Key mappings
 │   ├── Plugins/        # Plugin list
 │   └── Themes/         # Theme configuration
+├── setup-dev.sh        # Full dev environment setup
 └── README.md
 ```
 
